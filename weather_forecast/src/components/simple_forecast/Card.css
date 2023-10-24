@@ -1,0 +1,17 @@
+.card-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 20rem;
+    width: 15rem;
+    background-color: antiquewhite;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+.card-container img{
+    width: 10rem;
+}
+.card-container img {
+    display: block; 
+    margin: 0 auto; 
+  }
