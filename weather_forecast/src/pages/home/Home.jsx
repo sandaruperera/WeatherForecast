@@ -6,6 +6,14 @@ const Home = () => {
   const [cityWeather, setCityWeather] = useState(null);
   const [latitude, setLatitude] = useState(6.9271);
   const [longitude , setLongitude ] = useState(79.8612);
+  const handleSearch = ({ latitude, longitude }) => {
+   setLatitude(latitude);
+   setLongitude(longitude);
+   searchWeatherData(latitude, longitude)
+      .then((data) => {
+        setCityWeather(data);
+      });
+  };
 
   useEffect(()=>{
     searchWeatherData(latitude,longitude)
@@ -17,7 +25,7 @@ const Home = () => {
     <div className="home-container">
       <div className="current-weather">
         <CurrentWeather current ={cityWeather} />
-        <SearchWeather />
+        <SearchWeather onSearch={handleSearch} />
       </div>
       <div className="forecast-weather">
         <hr className="forecast-weather-divider" />
