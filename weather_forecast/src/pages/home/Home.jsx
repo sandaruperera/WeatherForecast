@@ -1,15 +1,14 @@
 import { useState, useEffect } from "react";
 import "./Home.css";
 import { CurrentWeather, SearchWeather, Card } from "../../components";
-import {
-  searchWeatherData,
-  fetchWeatherForecast,
-} from "../../api/apiClient";
+import { searchWeatherData, fetchWeatherForecast } from "../../api/apiClient";
+import { Link, useNavigate } from "react-router-dom";
 const Home = () => {
   const [cityWeather, setCityWeather] = useState(null);
   const [latitude, setLatitude] = useState(6.9271);
   const [longitude, setLongitude] = useState(79.8612);
   const [forecastData, setForecastData] = useState(null);
+  const navigate = useNavigate();
   const handleSearch = ({ latitude, longitude }) => {
     setLatitude(latitude);
     setLongitude(longitude);
@@ -42,6 +41,9 @@ const Home = () => {
       setForecastData(groupedDataArray);
     });
   };
+  const handleViewMore = () => {
+    navigate("/home/more");
+  };
   useEffect(() => {
     searchWeatherData(latitude, longitude).then((data) => {
       setCityWeather(data);
@@ -59,7 +61,13 @@ const Home = () => {
         <hr className="forecast-weather-divider" />
         <div className="forecast-weather-top">
           <p className="forecast-weather-title">Weather Forecast</p>
-          <button className="view-more">View More</button>
+          {console.log("forecastData before navigation:", forecastData)}
+          <Link to="/home/more" state={{data: forecastData}} >
+          <button className="view-more">
+            View More
+          </button>
+            </Link> 
+          
         </div>
         <div className="forecast-cards">
           {forecastData ? (
