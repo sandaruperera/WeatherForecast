@@ -1,6 +1,6 @@
 .main-conntainer{
-    background-color: aqua;
-    height: 20rem;
+    background-color: #E8ECF1;
+    height: 25rem;
     width: 20rem;
     display: flex;
     flex-direction: column;
@@ -11,6 +11,7 @@
 }
 .field{
     width: 15rem;
+    background-color:white
 }
 .field p{
     margin-right: 0.5rem;

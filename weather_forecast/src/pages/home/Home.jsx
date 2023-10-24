@@ -9,8 +9,9 @@ const Home = () => {
         <SearchWeather />
       </div>
       <div className="forecast-weather">
-        <p>Weather Forecast</p>
-        <div>
+        <hr className="divider"/>
+        <p className="forecast-weather-title">Weather Forecast</p>
+        <div className="forecast-cards">
           <Card />
           <Card />
           <Card />
