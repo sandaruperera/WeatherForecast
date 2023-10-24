@@ -8,21 +8,6 @@ const api = axios.create({
     }
 })
 
-const fetchCityWeather = async()=>{
-    try {
-        const res = await api.get('/weather',{
-            params: {
-               q :  "Colombo",
-               units: 'metric',
-            }
-        });
-        return res.data;
-    } catch (error) {
-        console.log(error);
-    }
-
-}
-
 const searchWeatherData = async(lat,long)=>{
     try {
         const res = await api.get('/weather',{
@@ -57,4 +42,4 @@ const fetchWeatherForecast = async (lat, long) =>{
     }
 }
 
-export {fetchCityWeather, searchWeatherData, fetchWeatherForecast};
+export { searchWeatherData, fetchWeatherForecast};
