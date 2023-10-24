@@ -46,7 +46,7 @@ const CurrentWeather = ({current}) => {
     else if(current.weather[0].icon==="50d" || current.weather[0].icon==="50n"){
       setWeatherIcon(MistIcon);
     }
-  },[])
+  },[current])
   
   return (
     <div className="container">

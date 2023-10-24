@@ -41,7 +41,7 @@ const Card = ({date, temp, description,icon,humidity}) => {
     else if(icon==="50d" ||icon==="50n"){
       setWeatherIcon(MistIcon);
     }
-  },[])
+  },[icon])
   return (
     <div className="card-container">
       <p className="day">{date}</p>

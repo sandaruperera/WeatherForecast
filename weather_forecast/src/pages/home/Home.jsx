@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import "./Home.css";
 import { CurrentWeather, SearchWeather, Card } from "../../components";
 import {
-  fetchCityWeather,
   searchWeatherData,
   fetchWeatherForecast,
 } from "../../api/apiClient";
