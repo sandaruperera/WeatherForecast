@@ -17,3 +17,10 @@
     display: block; 
     margin: 0 auto; 
   }
+.day{
+    font-weight: 700;
+}
+.card-temperature{
+    font-size: 20px;
+    font-weight: 600;
+}
