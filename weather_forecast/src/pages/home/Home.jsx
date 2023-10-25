@@ -41,9 +41,6 @@ const Home = () => {
       setForecastData(groupedDataArray);
     });
   };
-  const handleViewMore = () => {
-    navigate("/WeatherForecast/home/more");
-  };
   useEffect(() => {
     searchWeatherData(latitude, longitude).then((data) => {
       setCityWeather(data);
@@ -62,7 +59,7 @@ const Home = () => {
         <div className="forecast-weather-top">
           <p className="forecast-weather-title">Weather Forecast</p>
           {console.log("forecastData before navigation:", forecastData)}
-          <Link to="/home/more" state={{data: forecastData}} >
+          <Link to="/WeatherForecast/home/more" state={{data: forecastData}} >
           <button className="view-more">
             View More
           </button>
