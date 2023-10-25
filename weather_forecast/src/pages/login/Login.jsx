@@ -22,7 +22,7 @@ const Login = () => {
      
       setLoggedIn(true);
       setError(null);
-      navigate("/home");
+      navigate("/WeatherForecast/home");
     } else {
       setError("Invalid username or password. Please try again.");
     }

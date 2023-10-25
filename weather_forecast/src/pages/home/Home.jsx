@@ -42,7 +42,7 @@ const Home = () => {
     });
   };
   const handleViewMore = () => {
-    navigate("/home/more");
+    navigate("/WeatherForecast/home/more");
   };
   useEffect(() => {
     searchWeatherData(latitude, longitude).then((data) => {
